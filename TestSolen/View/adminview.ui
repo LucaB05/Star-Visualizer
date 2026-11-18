@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminView</class>
+ <widget class="QWidget" name="AdminView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1696</width>
+    <height>782</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: black;
+    color: white;
+}
+
+QFrame#adminContentFrame,
+QFrame#adminMenuCard,
+QFrame#settingsContentFrame,
+QFrame#addUserContentFrame,
+QFrame#starEditorFrame {
+    background-color: #090909;
+    border: 1px solid #303030;
+    border-radius: 10px;
+}
+
+QLabel#pageTitleLabel,
+QLabel#userSettingsTitleLabel,
+QLabel#starSettingsTitleLabel {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+QLabel#pageSubtitleLabel,
+QLabel#userSettingsSubtitleLabel,
+QLabel#starSettingsSubtitleLabel {
+    color: #bdbdbd;
+}
+
+QLineEdit,
+QComboBox,
+QDoubleSpinBox,
+QSpinBox,
+QTextEdit {
+    border: 1px solid #666666;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #111111;
+    color: white;
+}
+
+QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}
+
+QPushButton#deleteUserButton,
+QPushButton#deleteStarButton,
+QPushButton#cancelAddUserButton {
+    border-color: #b94a48;
+}
+
+QPushButton#saveUserButton,
+QPushButton#saveStarButton,
+QPushButton#addUserButton,
+QPushButton#addStarButton,
+QPushButton#addUserConfirmButton {
+    border-color: #c9a227;
+}
+
+QPushButton#addUserConfirmButton {
+    border-color: #2f9e44;
+}
+
+QPushButton#generateStarPositionButton {
+    border-color: #2f9e44;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QStackedWidget" name="adminStackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="adminMenuPage">
+      <layout class="QVBoxLayout" name="adminMenuRootLayout">
+       <property name="leftMargin">
+        <number>48</number>
+       </property>
+       <property name="topMargin">
+        <number>48</number>
+       </property>
+       <property name="rightMargin">
+        <number>48</number>
+       </property>
+       <property name="bottomMargin">
+        <number>48</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="adminContentFrame">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <layout class="QVBoxLayout" name="adminContentLayout">
+          <property name="leftMargin">
+           <number>42</number>
+          </property>
+          <property name="topMargin">
+           <number>34</number>
+          </property>
+          <property name="rightMargin">
+           <number>42</number>
+          </property>
+          <property name="bottomMargin">
+           <number>34</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="adminHeaderLayout">
+            <item>
+             <layout class="QVBoxLayout" name="adminHeaderTextLayout">
+              <item>
+               <widget class="QLabel" name="pageTitleLabel">
+                <property name="text">
+                 <string>Admin Functions</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="pageSubtitleLabel">
+                <property name="text">
+                 <string>Choose what kind of data you want to manage.</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="adminHeaderSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="adminBackToHomeButton">
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>42</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Back</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="adminMenuTopSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>120</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="adminChoiceLayout">
+            <item>
+             <spacer name="adminChoiceLeftSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>120</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="userSettingsButton">
+              <property name="minimumSize">
+               <size>
+                <width>260</width>
+                <height>120</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>User Settings</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="adminChoiceMiddleSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>80</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="starSettingsButton">
+              <property name="minimumSize">
+               <size>
+                <width>260</width>
+                <height>120</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Star Settings</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="adminChoiceRightSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>120</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="adminMenuBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>180</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="userSettingsPage">
+      <layout class="QVBoxLayout" name="userSettingsRootLayout">
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <property name="topMargin">
+        <number>40</number>
+       </property>
+       <property name="rightMargin">
+        <number>40</number>
+       </property>
+       <property name="bottomMargin">
+        <number>40</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="userSettingsHeaderLayout">
+         <item>
+          <layout class="QVBoxLayout" name="userSettingsHeaderTextLayout">
+           <item>
+            <widget class="QLabel" name="userSettingsTitleLabel">
+             <property name="text">
+              <string>User Settings</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="userSettingsSubtitleLabel">
+             <property name="text">
+              <string>Add users, edit user details, remove users, or update passwords.</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="userSettingsHeaderSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="backFromUserSettingsButton">
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>42</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Back</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="userSettingsBodyLayout">
+         <item>
+          <widget class="QFrame" name="userSearchFrame">
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>360</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <layout class="QVBoxLayout" name="userSearchLayout">
+            <item>
+             <widget class="QLabel" name="userSearchLabel">
+              <property name="text">
+               <string>Search Users</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="userSearchInputLayout">
+              <item>
+               <widget class="QLineEdit" name="userSearchLineEdit">
+                <property name="placeholderText">
+                 <string>Search by name</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="resetUserSearchButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>RESET</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QListWidget" name="userListWidget"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="addUserButton">
+              <property name="text">
+               <string>Add User</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+         </widget>
+         </item>
+         <item>
+          <widget class="QStackedWidget" name="userEditorStackedWidget">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="editUserPage">
+            <layout class="QVBoxLayout" name="editUserPageLayout">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+          <widget class="QFrame" name="settingsContentFrame">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <layout class="QVBoxLayout" name="userEditorLayout">
+            <property name="leftMargin">
+             <number>32</number>
+            </property>
+            <property name="topMargin">
+             <number>28</number>
+            </property>
+            <property name="rightMargin">
+             <number>32</number>
+            </property>
+            <property name="bottomMargin">
+             <number>28</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="userEditorTitleLabel">
+              <property name="text">
+               <string>User Details</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="userFormLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="usernameLabel">
+                <property name="text">
+                 <string>Username</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="usernameLineEdit"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="passwordLabel">
+                <property name="text">
+                 <string>Password</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="passwordLineEdit"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="confirmPasswordLabel">
+                <property name="text">
+                 <string>Confirm Password</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="confirmPasswordLineEdit"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="adminRoleLabel">
+                <property name="text">
+                 <string>Admin Role</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QCheckBox" name="adminRoleCheckBox">
+                <property name="text">
+                 <string>User has admin access</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="userEditorSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>260</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="userStatusLabel">
+              <property name="visible">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="userActionsLayout">
+              <item>
+               <widget class="QPushButton" name="deleteUserButton">
+                <property name="text">
+                 <string>Delete User</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="userActionsSpacer">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="saveUserButton">
+                <property name="text">
+                 <string>Save User</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="addUserPage">
+            <layout class="QVBoxLayout" name="addUserPageLayout">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="addUserContentFrame">
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <layout class="QVBoxLayout" name="addUserEditorLayout">
+                <property name="leftMargin">
+                 <number>32</number>
+                </property>
+                <property name="topMargin">
+                 <number>28</number>
+                </property>
+                <property name="rightMargin">
+                 <number>32</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>28</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="addUserTitleLabel">
+                  <property name="styleSheet">
+                   <string notr="true">font-size: 28px; font-weight: bold;</string>
+                  </property>
+                  <property name="text">
+                   <string>Add New User</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QFormLayout" name="addUserFormLayout">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="addUsernameLabel">
+                    <property name="text">
+                     <string>Username</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="addUsernameLineEdit"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="addPasswordLabel">
+                    <property name="text">
+                     <string>Password</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="addPasswordLineEdit"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="addConfirmPasswordLabel">
+                    <property name="text">
+                     <string>Confirm Password</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="addConfirmPasswordLineEdit"/>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="addAdminRoleLabel">
+                    <property name="text">
+                     <string>Admin Role</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QCheckBox" name="addAdminRoleCheckBox">
+                    <property name="text">
+                     <string>User has admin access</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="addUserEditorSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>260</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLabel" name="addUserStatusLabel">
+                  <property name="visible">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="addUserActionsLayout">
+                  <item>
+                   <widget class="QPushButton" name="cancelAddUserButton">
+                    <property name="text">
+                     <string>Cancel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="addUserActionsSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="addUserConfirmButton">
+                    <property name="text">
+                     <string>Add</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="starSettingsPage">
+      <layout class="QVBoxLayout" name="starSettingsRootLayout">
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <property name="topMargin">
+        <number>40</number>
+       </property>
+       <property name="rightMargin">
+        <number>40</number>
+       </property>
+       <property name="bottomMargin">
+        <number>40</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="starSettingsHeaderLayout">
+         <item>
+          <layout class="QVBoxLayout" name="starSettingsHeaderTextLayout">
+           <item>
+            <widget class="QLabel" name="starSettingsTitleLabel">
+             <property name="text">
+              <string>Star Settings</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="starSettingsSubtitleLabel">
+             <property name="text">
+              <string>Add, edit, or delete stars from the catalog.</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="starSettingsHeaderSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="backFromStarSettingsButton">
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>42</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Back</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="starSettingsBodyLayout">
+         <item>
+          <widget class="QFrame" name="starSearchFrame">
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>360</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <layout class="QVBoxLayout" name="starSearchLayout">
+            <item>
+             <widget class="QLabel" name="starSearchLabel">
+              <property name="text">
+               <string>Search Stars</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="starSearchInputLayout">
+              <item>
+               <widget class="QLineEdit" name="starSearchLineEdit">
+                <property name="placeholderText">
+                 <string>Search by star name</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="resetStarSearchButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>RESET</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QListWidget" name="starListWidget"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="addStarButton">
+              <property name="text">
+               <string>Add Star</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="starEditorFrame">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <layout class="QVBoxLayout" name="starEditorLayout">
+            <property name="leftMargin">
+             <number>32</number>
+            </property>
+            <property name="topMargin">
+             <number>28</number>
+            </property>
+            <property name="rightMargin">
+             <number>32</number>
+            </property>
+            <property name="bottomMargin">
+             <number>28</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="starEditorTitleLabel">
+              <property name="text">
+               <string>Star Details</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="starFormLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="starNameLabel">
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="starNameLineEdit"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="raLabel">
+                <property name="text">
+                 <string>RA</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QDoubleSpinBox" name="raSpinBox">
+                <property name="decimals">
+                 <number>6</number>
+                </property>
+                <property name="maximum">
+                 <double>360.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="decLabel">
+                <property name="text">
+                 <string>Dec</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QDoubleSpinBox" name="decSpinBox">
+                <property name="decimals">
+                 <number>6</number>
+                </property>
+                <property name="minimum">
+                 <double>-90.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>90.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="parallaxLabel">
+                <property name="text">
+                 <string>Parallax</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QDoubleSpinBox" name="parallaxSpinBox">
+                <property name="decimals">
+                 <number>6</number>
+                </property>
+                <property name="maximum">
+                 <double>100000.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="distanceFromSunLabel">
+                <property name="text">
+                 <string>Distance from Sun</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <layout class="QHBoxLayout" name="distanceGenerationLayout">
+                <item>
+                 <widget class="QDoubleSpinBox" name="distanceFromSunSpinBox">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="maximum">
+                   <double>1000000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="generateStarPositionButton">
+                  <property name="text">
+                   <string>Generate Position</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="vMagLabel">
+                <property name="text">
+                 <string>V Mag</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QDoubleSpinBox" name="vMagSpinBox">
+                <property name="minimum">
+                 <double>-40.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>40.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="bMagLabel">
+                <property name="text">
+                 <string>B Mag</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QDoubleSpinBox" name="bMagSpinBox">
+                <property name="minimum">
+                 <double>-40.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>40.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QLabel" name="spectralTypeLabel">
+                <property name="text">
+                 <string>Spectral Type</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="QLineEdit" name="spectralTypeLineEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="starStatusLabel">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="visible">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="starEditorSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>190</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="starActionsLayout">
+              <item>
+               <widget class="QPushButton" name="deleteStarButton">
+                <property name="text">
+                 <string>Delete Star</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="starActionsSpacer">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="saveStarButton">
+                <property name="text">
+                 <string>Save Star</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

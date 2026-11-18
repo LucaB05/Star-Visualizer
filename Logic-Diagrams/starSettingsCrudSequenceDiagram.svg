@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="3050" viewBox="0 0 2500 3050">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f9e44"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b94a48"/>
+    </marker>
+    <style>
+      .title { font: 700 46px Arial, sans-serif; fill: #111111; }
+      .head { font: 700 22px Arial, sans-serif; fill: #13213b; }
+      .label { font: 21px Arial, sans-serif; fill: #111111; }
+      .small { font: 19px Arial, sans-serif; fill: #111111; }
+      .altText { font: 700 22px Arial, sans-serif; fill: #13213b; }
+      .box { fill: #ffffff; stroke: #13213b; stroke-width: 3; }
+      .altBox { fill: none; stroke: #13213b; stroke-width: 3; }
+      .note { fill: #fffdf2; stroke: #13213b; stroke-width: 2; }
+      .life { stroke: #13213b; stroke-width: 3; stroke-dasharray: 16 13; }
+      .active { fill: #eef4fb; stroke: #13213b; stroke-width: 1.5; }
+      .line { stroke: #111111; stroke-width: 3; marker-end: url(#arrow); }
+      .return { stroke: #111111; stroke-width: 2.5; stroke-dasharray: 12 8; marker-end: url(#arrow); }
+      .greenLine { stroke: #2f9e44; stroke-width: 2.5; stroke-dasharray: 12 8; marker-end: url(#arrowGreen); }
+      .redLine { stroke: #b94a48; stroke-width: 2.5; stroke-dasharray: 12 8; marker-end: url(#arrowRed); }
+      .divider { stroke: #6c757d; stroke-width: 2; }
+      .bg { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect width="2500" height="3050" fill="#ffffff"/>
+  <text x="1250" y="62" text-anchor="middle" class="title">Star Settings CRUD Flow</text>
+
+  <!-- Participants -->
+  <rect x="70" y="100" width="220" height="68" class="box"/>
+  <text x="180" y="142" text-anchor="middle" class="head">Admin</text>
+
+  <rect x="380" y="100" width="240" height="68" class="box"/>
+  <text x="500" y="142" text-anchor="middle" class="head">AdminView</text>
+
+  <rect x="730" y="100" width="290" height="68" class="box"/>
+  <text x="875" y="142" text-anchor="middle" class="head">AdminController</text>
+
+  <rect x="1135" y="100" width="250" height="68" class="box"/>
+  <text x="1260" y="142" text-anchor="middle" class="head">StarDatabase</text>
+
+  <rect x="1540" y="100" width="275" height="68" class="box"/>
+  <text x="1677" y="130" text-anchor="middle" class="head">SQLite stars</text>
+  <text x="1677" y="156" text-anchor="middle" class="head">table</text>
+
+  <rect x="1995" y="100" width="310" height="68" class="box"/>
+  <text x="2150" y="130" text-anchor="middle" class="head">StarController</text>
+  <text x="2150" y="156" text-anchor="middle" class="head">and 3D Scene</text>
+
+  <!-- Lifelines stay visible through transparent alt boxes -->
+  <line x1="180" y1="168" x2="180" y2="2980" class="life"/>
+  <line x1="500" y1="168" x2="500" y2="2980" class="life"/>
+  <line x1="875" y1="168" x2="875" y2="2980" class="life"/>
+  <line x1="1260" y1="168" x2="1260" y2="2980" class="life"/>
+  <line x1="1677" y1="168" x2="1677" y2="2980" class="life"/>
+  <line x1="2150" y1="168" x2="2150" y2="2980" class="life"/>
+
+  <!-- Starting point -->
+  <rect x="90" y="205" width="2270" height="82" class="note"/>
+  <text x="120" y="240" class="altText">Starting point</text>
+  <text x="120" y="266" class="small">Admin is already on the Star Settings page. The list-loading flow is shown in the separate admin loading diagram.</text>
+
+  <!-- Save block -->
+  <rect x="90" y="330" width="2270" height="790" class="altBox"/>
+  <rect x="90" y="330" width="95" height="40" class="box"/>
+  <text x="137" y="357" text-anchor="middle" class="altText">alt</text>
+  <text x="210" y="357" class="altText">Save edited star</text>
+
+  <rect x="492" y="410" width="16" height="250" class="active"/>
+  <rect x="867" y="455" width="16" height="560" class="active"/>
+  <rect x="1252" y="585" width="16" height="370" class="active"/>
+  <rect x="1669" y="630" width="16" height="260" class="active"/>
+  <rect x="2142" y="1020" width="16" height="60" class="active"/>
+
+  <text x="290" y="405" text-anchor="middle" class="label">1. Clicks Save Star</text>
+  <line x1="180" y1="425" x2="500" y2="425" class="line"/>
+
+  <text x="688" y="450" text-anchor="middle" class="label">2. saveStarRequested(star)</text>
+  <line x1="500" y1="470" x2="875" y2="470" class="line"/>
+
+  <text x="1110" y="515" text-anchor="middle" class="label">3. Validate selected star, name and parallax</text>
+  <path d="M 875 525 L 980 525 L 980 565 L 875 565" fill="none" class="line"/>
+
+  <text x="1067" y="585" text-anchor="middle" class="label">4. findStarByName(name)</text>
+  <line x1="875" y1="605" x2="1260" y2="605" class="line"/>
+
+  <text x="1468" y="625" text-anchor="middle" class="label">5. SELECT star by name</text>
+  <line x1="1260" y1="645" x2="1677" y2="645" class="line"/>
+
+  <text x="1468" y="685" text-anchor="middle" class="label">6. Star or empty result</text>
+  <line x1="1677" y1="705" x2="1260" y2="705" class="return"/>
+
+  <text x="1067" y="745" text-anchor="middle" class="label">7. StarDatabase returns Star</text>
+  <line x1="1260" y1="765" x2="875" y2="765" class="return"/>
+
+  <text x="1067" y="820" text-anchor="middle" class="label">8. updateStar(star)</text>
+  <line x1="875" y1="840" x2="1260" y2="840" class="line"/>
+
+  <text x="1468" y="865" text-anchor="middle" class="label">9. UPDATE stars WHERE id = star.id</text>
+  <line x1="1260" y1="885" x2="1677" y2="885" class="line"/>
+
+  <text x="1468" y="925" text-anchor="middle" class="label">10. Success or failure</text>
+  <line x1="1677" y1="945" x2="1260" y2="945" class="return"/>
+
+  <text x="1067" y="985" text-anchor="middle" class="label">11. true or false</text>
+  <line x1="1260" y1="1005" x2="875" y2="1005" class="return"/>
+
+  <line x1="90" y1="1040" x2="2360" y2="1040" class="divider"/>
+  <rect x="120" y="1024" width="340" height="27" class="bg"/>
+  <text x="290" y="1044" text-anchor="middle" class="small" fill="#6c757d">if validation or database update fails</text>
+  <text x="688" y="1078" text-anchor="middle" class="label" fill="#b94a48">12a. showStarMessage(error, red)</text>
+  <line x1="875" y1="1098" x2="500" y2="1098" class="redLine"/>
+
+  <line x1="90" y1="1145" x2="2360" y2="1145" class="divider"/>
+  <rect x="120" y="1129" width="170" height="27" class="bg"/>
+  <text x="205" y="1149" text-anchor="middle" class="small" fill="#6c757d">if save succeeds</text>
+  <text x="1512" y="1185" text-anchor="middle" class="label" fill="#2f9e44">12b. display updated star, show green success, emit starsChanged()</text>
+  <line x1="875" y1="1205" x2="2150" y2="1205" class="greenLine"/>
+  <text x="1512" y="1240" text-anchor="middle" class="label">13b. reloadStarsFromDatabase(): clear scene and reload stars</text>
+  <path d="M 2150 1260 L 2255 1260 L 2255 1300 L 2150 1300" fill="none" class="line"/>
+
+  <!-- Delete block -->
+  <rect x="90" y="1360" width="2270" height="540" class="altBox"/>
+  <rect x="90" y="1360" width="95" height="40" class="box"/>
+  <text x="137" y="1387" text-anchor="middle" class="altText">alt</text>
+  <text x="210" y="1387" class="altText">Delete selected star</text>
+
+  <rect x="492" y="1440" width="16" height="205" class="active"/>
+  <rect x="867" y="1485" width="16" height="315" class="active"/>
+  <rect x="1252" y="1590" width="16" height="250" class="active"/>
+  <rect x="1669" y="1635" width="16" height="160" class="active"/>
+  <rect x="2142" y="1870" width="16" height="50" class="active"/>
+
+  <text x="300" y="1435" text-anchor="middle" class="label">1. Clicks Delete Star</text>
+  <line x1="180" y1="1455" x2="500" y2="1455" class="line"/>
+
+  <text x="688" y="1480" text-anchor="middle" class="label">2. deleteStarRequested(starId, starName)</text>
+  <line x1="500" y1="1500" x2="875" y2="1500" class="line"/>
+
+  <text x="1090" y="1548" text-anchor="middle" class="label">3. Validate selected star</text>
+  <path d="M 875 1558 L 980 1558 L 980 1598 L 875 1598" fill="none" class="line"/>
+
+  <text x="1067" y="1610" text-anchor="middle" class="label">4. deleteStar(starId)</text>
+  <line x1="875" y1="1630" x2="1260" y2="1630" class="line"/>
+
+  <text x="1468" y="1655" text-anchor="middle" class="label">5. DELETE FROM favorites WHERE starId = id</text>
+  <line x1="1260" y1="1675" x2="1677" y2="1675" class="line"/>
+
+  <text x="1468" y="1715" text-anchor="middle" class="label">6. DELETE FROM stars WHERE id = id</text>
+  <line x1="1260" y1="1735" x2="1677" y2="1735" class="line"/>
+
+  <text x="1468" y="1775" text-anchor="middle" class="label">7. Success or failure</text>
+  <line x1="1677" y1="1795" x2="1260" y2="1795" class="return"/>
+
+  <text x="1067" y="1835" text-anchor="middle" class="label">8. true or false</text>
+  <line x1="1260" y1="1855" x2="875" y2="1855" class="return"/>
+
+  <line x1="90" y1="1900" x2="2360" y2="1900" class="divider"/>
+  <rect x="120" y="1884" width="150" height="27" class="bg"/>
+  <text x="195" y="1904" text-anchor="middle" class="small" fill="#6c757d">success or error</text>
+  <text x="120" y="1940" class="small" fill="#2f9e44">Success: reload the star list, clear the selected star form, show green message, and emit starsChanged().</text>
+  <text x="120" y="1966" class="small" fill="#b94a48">Error: keep the form visible and show a red error message.</text>
+  <line x1="875" y1="2008" x2="2150" y2="2008" class="greenLine"/>
+  <text x="1512" y="2000" text-anchor="middle" class="label" fill="#2f9e44">9b. starsChanged() refreshes the 3D scene</text>
+
+  <!-- Add block -->
+  <rect x="90" y="2075" width="2270" height="850" class="altBox"/>
+  <rect x="90" y="2075" width="95" height="40" class="box"/>
+  <text x="137" y="2102" text-anchor="middle" class="altText">alt</text>
+  <text x="210" y="2102" class="altText">Add new star</text>
+
+  <rect x="492" y="2150" width="16" height="280" class="active"/>
+  <rect x="867" y="2275" width="16" height="235" class="active"/>
+  <rect x="1252" y="2420" width="16" height="105" class="active"/>
+  <rect x="1669" y="2460" width="16" height="60" class="active"/>
+  <rect x="2142" y="2550" width="16" height="45" class="active"/>
+
+  <text x="300" y="2145" text-anchor="middle" class="label">1. Clicks Add Star</text>
+  <line x1="180" y1="2165" x2="500" y2="2165" class="line"/>
+
+  <text x="690" y="2200" text-anchor="middle" class="label">2. showAddStarMode()</text>
+  <path d="M 500 2210 L 610 2210 L 610 2250 L 500 2250" fill="none" class="line"/>
+
+  <text x="430" y="2280" text-anchor="middle" class="label">3. Optional: Generate Position from distance</text>
+  <line x1="180" y1="2300" x2="500" y2="2300" class="line"/>
+
+  <text x="720" y="2340" text-anchor="middle" class="label">4. Fill RA, Dec and parallax</text>
+  <path d="M 500 2350 L 610 2350 L 610 2390 L 500 2390" fill="none" class="line"/>
+
+  <text x="340" y="2420" text-anchor="middle" class="label">5. Fills star form and clicks Add Star</text>
+  <line x1="180" y1="2440" x2="500" y2="2440" class="line"/>
+
+  <text x="688" y="2465" text-anchor="middle" class="label">6. addStarRequested(star)</text>
+  <line x1="500" y1="2485" x2="875" y2="2485" class="line"/>
+
+  <text x="1110" y="2530" text-anchor="middle" class="label">7. Validate name, parallax, Solen check and duplicate name</text>
+  <path d="M 875 2540 L 980 2540 L 980 2580 L 875 2580" fill="none" class="line"/>
+
+  <text x="1067" y="2620" text-anchor="middle" class="label">8. addStar(star)</text>
+  <line x1="875" y1="2640" x2="1260" y2="2640" class="line"/>
+
+  <text x="1468" y="2665" text-anchor="middle" class="label">9. INSERT INTO stars</text>
+  <line x1="1260" y1="2685" x2="1677" y2="2685" class="line"/>
+
+  <text x="1468" y="2725" text-anchor="middle" class="label">10. New star id or failure</text>
+  <line x1="1677" y1="2745" x2="1260" y2="2745" class="return"/>
+
+  <text x="1067" y="2785" text-anchor="middle" class="label">11. newId or -1</text>
+  <line x1="1260" y1="2805" x2="875" y2="2805" class="return"/>
+
+  <line x1="90" y1="2850" x2="2360" y2="2850" class="divider"/>
+  <rect x="120" y="2834" width="150" height="27" class="bg"/>
+  <text x="195" y="2854" text-anchor="middle" class="small" fill="#6c757d">success or error</text>
+  <text x="120" y="2890" class="small" fill="#2f9e44">Success: reload the star list, display the new star, show green message, and emit starsChanged().</text>
+  <text x="120" y="2916" class="small" fill="#b94a48">Error: stay on the Add Star form and show a red error message.</text>
+  <line x1="875" y1="2958" x2="2150" y2="2958" class="greenLine"/>
+  <text x="1512" y="2950" text-anchor="middle" class="label" fill="#2f9e44">12b. starsChanged() refreshes the 3D scene</text>
+</svg>

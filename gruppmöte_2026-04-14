@@ -1,0 +1,14 @@
+Man ska kunna gå från first person till 3:e person genom att trycka på knappen igen. (knappen ska döpas om efter man tryckt på den. Så t.ex first person -> third person
+Nu trycker man på den gömda stjärnan när man är i 1:a person. Lägg till en avståndscheck innan signal skickas. (använd event istället för id, får koordinater direkt då. 
+
+Knapp som gömmer inforutan till höger. Efter man tryckt den ska en liknande knapp (<<<) ska dyka upp längst till höger på skärmen.
+
+
+Fixa databas. Tabeller för användare,admin,favoritstjärnor osv.
+Fönster för inloggning, utloggning, osv.
+
+sökknappen ska alltid vara synlig. ska inte vara en del av inforutan.
+
+
+sökning och filtrering.
+Kunna lägga till och ta bort stjärnor.

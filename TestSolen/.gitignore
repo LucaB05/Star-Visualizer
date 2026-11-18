@@ -1,0 +1,24 @@
+# Qt Creator-specifika filer
+build-*/
+build/
+*.user
+*.user.*
+.qmake.stash
+Makefile*
+
+.qtc_clangd/
+**/.qtc_clangd/
+**/.cache/
+*.idx
+# Kompilerade byggfiler och mappar
+debug/
+release/
+object_script.*.Release
+object_script.*.Debug
+*.obj
+*.exe
+*.o
+
+# VS Code-specifika filer
+.vscode/
+

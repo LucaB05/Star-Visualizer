@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StarView</class>
+ <widget class="QWidget" name="StarView">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1696</width>
+    <height>782</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: white; background-color:black</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="l_StarName">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white; background-color:black</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="firstPersonButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 4px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+       </property>
+       <property name="text">
+        <string>First Person</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="homeButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 4px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+       </property>
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="favoritesButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 4px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+       </property>
+       <property name="text">
+        <string>Favorites</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="filterButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 4px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+       </property>
+       <property name="text">
+        <string>Filter</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="adminFunctionButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="visible">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 4px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+       </property>
+       <property name="text">
+        <string>Admin Function</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="searchLayout">
+       <property name="spacing">
+        <number>8</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="searchLabel">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Search</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="SearchBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="currentText">
+          <string/>
+         </property>
+         <property name="currentIndex">
+          <number>-1</number>
+         </property>
+         <property name="maxVisibleItems">
+          <number>20</number>
+         </property>
+         <property name="placeholderText">
+          <string/>
+         </property>
+         <item>
+          <property name="text">
+           <string>Vega</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Omega</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sega</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Bega</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="4,1">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout"/>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>220</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>3</number>
+       </property>
+       <widget class="QWidget" name="loggedOutPage">
+        <property name="styleSheet">
+         <string notr="true">color: white; background-color:black</string>
+        </property>
+        <layout class="QVBoxLayout" name="loggedOutLayout">
+         <item>
+          <spacer name="loggedOutSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="loginButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+           </property>
+           <property name="text">
+            <string>Log in</string>
+           </property>
+         </widget>
+        </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="loggedInPage">
+        <property name="styleSheet">
+         <string notr="true">color: white; background-color:black</string>
+        </property>
+        <layout class="QVBoxLayout" name="loggedInLayout">
+         <item>
+          <widget class="QGroupBox" name="favoritesContainer">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+           </property>
+           <property name="title">
+            <string>Favorites</string>
+           </property>
+           <layout class="QVBoxLayout" name="favoritesLayout">
+            <item>
+             <widget class="QListWidget" name="favoritesList">
+              <property name="styleSheet">
+               <string notr="true">color: white; background-color:black</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+         <widget class="QPushButton" name="logoutButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>38</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+            <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+          </property>
+           <property name="text">
+            <string>Log out</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="starInfoPage">
+        <property name="styleSheet">
+         <string notr="true">color: white; background-color:black</string>
+        </property>
+        <layout class="QVBoxLayout" name="starInfoPageLayout">
+         <item>
+          <widget class="QGroupBox" name="starInfoContainer">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: white; background-color:black</string>
+           </property>
+           <property name="title">
+            <string>Star Information</string>
+           </property>
+           <layout class="QFormLayout" name="starInfoFormLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="nameFieldLabel">
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="starNameValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="idFieldLabel">
+              <property name="text">
+               <string>ID</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="starIdValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="raFieldLabel">
+              <property name="text">
+               <string>RA</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="starRaValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="decFieldLabel">
+              <property name="text">
+               <string>Dec</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="starDecValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="parallaxFieldLabel">
+              <property name="text">
+               <string>Parallax</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="starParallaxValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="vMagFieldLabel">
+              <property name="text">
+               <string>V Mag</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLabel" name="starVMagValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="bMagFieldLabel">
+              <property name="text">
+               <string>B Mag</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="starBMagValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="spectralTypeFieldLabel">
+              <property name="text">
+               <string>Spectral Type</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLabel" name="starSpectralTypeValue">
+              <property name="text">
+               <string>-</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        <item>
+         <widget class="QPushButton" name="favoriteToggleButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="visible">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    color: white;
+    background-color: black;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+QPushButton:hover {
+    border-color: #aaaaaa;
+}</string>
+          </property>
+          <property name="text">
+           <string>Add Favorite</string>
+          </property>
+         </widget>
+        </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="filterPage">
+        <property name="styleSheet">
+         <string notr="true">color: white; background-color:black</string>
+        </property>
+        <layout class="QVBoxLayout" name="filterPageLayout">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>8</number>
+         </property>
+         <property name="topMargin">
+          <number>8</number>
+         </property>
+         <property name="rightMargin">
+          <number>8</number>
+         </property>
+         <property name="bottomMargin">
+          <number>8</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="filterTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">font-size: 16px; font-weight: 600;</string>
+           </property>
+           <property name="text">
+            <string>Filter Stars</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="filterScrollArea">
+           <property name="frameShape">
+            <enum>QFrame::Shape::NoFrame</enum>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="filterScrollContent">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>318</width>
+              <height>639</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="filterScrollLayout">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <item>
+              <widget class="QGroupBox" name="spectralClassGroupBox">
+               <property name="title">
+                <string>Spectral Class</string>
+               </property>
+               <layout class="QGridLayout" name="spectralClassLayout">
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="spectralBCheckBox">
+                  <property name="text">
+                   <string>B</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QCheckBox" name="spectralLCheckBox">
+                  <property name="text">
+                   <string>L</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QCheckBox" name="spectralMCheckBox">
+                  <property name="text">
+                   <string>M</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QCheckBox" name="spectralACheckBox">
+                  <property name="text">
+                   <string>A</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="spectralFCheckBox">
+                  <property name="text">
+                   <string>F</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="spectralOCheckBox">
+                  <property name="text">
+                   <string>O</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QCheckBox" name="spectralGCheckBox">
+                  <property name="text">
+                   <string>G</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="2">
+                 <widget class="QCheckBox" name="spectralTCheckBox">
+                  <property name="text">
+                   <string>T</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QCheckBox" name="spectralKCheckBox">
+                  <property name="text">
+                   <string>K</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="distanceGroupBox">
+               <property name="title">
+                <string>Distance From Sun</string>
+               </property>
+               <layout class="QFormLayout" name="distanceFormLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="minDistanceLabel">
+                  <property name="text">
+                   <string>Min parsec</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="minDistanceSpinBox">
+                  <property name="maximum">
+                   <double>100000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="maxDistanceLabel">
+                  <property name="text">
+                   <string>Max parsec</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDoubleSpinBox" name="maxDistanceSpinBox">
+                  <property name="maximum">
+                   <double>100000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="temperatureGroupBox">
+               <property name="title">
+                <string>Temperature</string>
+               </property>
+               <layout class="QFormLayout" name="temperatureFormLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="minTemperatureLabel">
+                  <property name="text">
+                   <string>Min K</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QSpinBox" name="minTemperatureSpinBox">
+                  <property name="maximum">
+                   <number>60000</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="maxTemperatureLabel">
+                  <property name="text">
+                   <string>Max K</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="maxTemperatureSpinBox">
+                  <property name="maximum">
+                   <number>60000</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="sizeMassGroupBox">
+               <property name="title">
+                <string>Size And Weight</string>
+               </property>
+               <layout class="QFormLayout" name="sizeMassFormLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="minRadiusLabel">
+                  <property name="text">
+                   <string>Min radius</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="minRadiusSpinBox">
+                  <property name="maximum">
+                   <double>1000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="maxRadiusLabel">
+                  <property name="text">
+                   <string>Max radius</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDoubleSpinBox" name="maxRadiusSpinBox">
+                  <property name="maximum">
+                   <double>1000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="minMassLabel">
+                  <property name="text">
+                   <string>Min weight</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QDoubleSpinBox" name="minMassSpinBox">
+                  <property name="maximum">
+                   <double>1000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="maxMassLabel">
+                  <property name="text">
+                   <string>Max weight</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QDoubleSpinBox" name="maxMassSpinBox">
+                  <property name="maximum">
+                   <double>1000000.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="brightnessGroupBox">
+               <property name="title">
+                <string>Brightness</string>
+               </property>
+               <layout class="QFormLayout" name="brightnessFormLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="minVMagLabel">
+                  <property name="text">
+                   <string>Min V Mag</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="minVMagSpinBox">
+                  <property name="minimum">
+                   <double>-40.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>40.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="maxVMagLabel">
+                  <property name="text">
+                   <string>Max V Mag</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDoubleSpinBox" name="maxVMagSpinBox">
+                  <property name="minimum">
+                   <double>-40.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>40.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="filterScrollSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="filterActionsLayout">
+           <item>
+            <widget class="QPushButton" name="cancelFilterButton">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="text">
+              <string>Cancel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="applyFilterButton">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="text">
+              <string>Apply Filter</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
